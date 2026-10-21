@@ -4,7 +4,7 @@ export const adventure = {
   title: 'Michiaventura',
   subtitle: 'Un cumpleaños hecho con amor',
   birthday: null, // YYYY-MM-DD: pendiente de personalizar.
-  music: null, // null: melodía original suave; o archivo local /media/nuestra-cancion.mp3.
+  music: null, // null: Las mañanitas en piano sintetizado; o archivo local /media/nuestra-cancion.mp3.
   invitation: {
     eyebrow: 'UNA MISIÓN MUY ESPECIAL TE ESPERA',
     heading: 'Hoy, la magia lleva tu nombre.',

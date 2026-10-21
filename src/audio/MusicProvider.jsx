@@ -1,9 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { adventure } from '../data/adventure.js';
 import { MusicContext } from './music-context.js';
-
-// Pequeña melodía original sintetizada localmente: no requiere archivos externos.
-const notes = [261.63, 329.63, 392, 523.25, 440, 392, 329.63, 293.66, 261.63, 349.23, 440, 523.25, 392, 329.63, 293.66, 261.63];
+import { startPiano } from './piano.js';
 
 export default function MusicProvider({ children }) {
   const [playing, setPlaying] = useState(false);
@@ -12,11 +10,11 @@ export default function MusicProvider({ children }) {
   const session = useRef(0);
   const context = useRef(null);
   const audio = useRef(null);
-  const timer = useRef(null);
+  const stopPiano = useRef(null);
   const stop = useCallback(() => {
     session.current++;
-    clearInterval(timer.current);
-    timer.current = null;
+    stopPiano.current?.();
+    stopPiano.current = null;
     if (audio.current) { audio.current.pause(); audio.current.removeAttribute('src'); audio.current.load(); audio.current = null; }
     if (context.current) { context.current.close().catch(() => {}); context.current = null; }
     setPlaying(false);
@@ -50,25 +48,7 @@ export default function MusicProvider({ children }) {
         context.current = ctx;
         await ctx.resume();
         if (session.current !== current) return;
-        function schedule() {
-          if (ctx.state === 'closed') return;
-          const start = ctx.currentTime + .06;
-          notes.forEach((frequency, index) => {
-            const oscillator = ctx.createOscillator();
-            const envelope = ctx.createGain();
-            oscillator.type = 'sine';
-            oscillator.frequency.value = frequency;
-            envelope.gain.setValueAtTime(.0001, start + index * .5);
-            envelope.gain.exponentialRampToValueAtTime(.045, start + index * .5 + .025);
-            envelope.gain.exponentialRampToValueAtTime(.0001, start + index * .5 + .8);
-            oscillator.connect(envelope);
-            envelope.connect(ctx.destination);
-            oscillator.start(start + index * .5);
-            oscillator.stop(start + index * .5 + .85);
-          });
-        }
-        schedule();
-        timer.current = setInterval(schedule, notes.length * 500);
+        stopPiano.current = startPiano(ctx);
       }
       if (session.current === current) setPlaying(true);
     } catch {

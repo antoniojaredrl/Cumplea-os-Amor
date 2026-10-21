@@ -60,7 +60,7 @@ tests/          # reglas del progreso
 docs/           # arquitectura y plan incremental
 ```
 
-Personaliza `src/data/adventure.js`: nombre, fotos, recuerdos, razones, ingredientes, fecha, carta, música y sorpresa. La carta incluye un texto inicial editable para Ingrid, sin recuerdos ni fechas inventados. La música predeterminada es una melodía suave generada localmente y la sorpresa es un frasquito de deseos digitales. Coloca recursos personales en `public/media` y usa rutas `/media/archivo.jpg`. Las fuentes y dibujos se sirven localmente; no hay llamadas externas para las funciones esenciales.
+Personaliza `src/data/adventure.js`: nombre, fotos, recuerdos, razones, ingredientes, fecha, carta, música y sorpresa. La carta incluye un texto inicial editable para Ingrid, sin recuerdos ni fechas inventados. La música predeterminada es una versión instrumental de Las mañanitas con piano sintetizado y acompañamiento suave; se genera localmente, sin descargar grabaciones. La sorpresa es un frasquito de deseos digitales. Coloca recursos personales en `public/media` y usa rutas `/media/archivo.jpg`. Las fuentes y dibujos se sirven localmente; no hay llamadas externas para las funciones esenciales.
 
 Mientras `memories` esté vacío, el álbum funciona con tres tarjetas ilustradas simbólicas, identificadas como «Recuerdo ilustrado». Para usar fotos y recuerdos reales, añade objetos con `id`, `title`, `description`, `message`, `photo` y `date`. Consulta el ejemplo y el comportamiento ante fotos ausentes en `docs/FASE-5.md`. Los mensajes de las flores y los ingredientes siguen en `adventure.reasons` y `adventure.ingredients`.
 
