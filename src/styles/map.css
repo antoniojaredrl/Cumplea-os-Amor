@@ -1,0 +1,73 @@
+/* Estados del mapa: contraste y texto además del color. */
+.interactive-map .garden-map-preview { margin-top: 22px; }
+.interactive-map .map-stations { min-height: 365px; }
+.interactive-map .map-station { display: block; padding: 0 5px; }
+.map-station-control { display: flex; flex-direction: column; align-items: center; gap: 8px; width: 100%; padding: 0 2px 6px; border-radius: 18px; background: transparent; color: #735b66; min-height: 120px; }
+.map-station-title { font-family: var(--font-display); font-size: 15px; font-weight: 400; }
+.map-station-status { font-size: 9px; font-weight: 800; color: #775565; background: #fffaf4df; padding: 4px 10px; border-radius: 20px; }
+.station-lock-reason { max-width: 140px; font-size: 8px; line-height: 1.5; color: #766f70; }
+.station-is-locked .map-station-picture { filter: saturate(.35); opacity: .8; }
+.station-is-locked .map-station-count { background: #a39b9f; }
+.station-is-locked .map-station-status { background: #f6f1edf0; color: #827981; }
+.station-is-completed .map-station-count { background: #799c82; }
+.station-is-completed .map-station-status { color: #55745e; background: #f0f9ed; }
+.station-is-available .map-station-picture { box-shadow: 0 0 0 4px #c99cb763, 0 8px 18px #ac7b9c20; }
+.station-is-available .map-station-status { background: #b8839d; color: #fff; }
+.map-progress { max-width: 480px; margin: 23px auto 0; padding: 15px 20px; border: 1px solid #efe2e7; background: #fff9f5; border-radius: 15px; }
+.map-progress > div { display: flex; align-items: center; gap: 8px; font-size: 11px; color: #a17d8c; }
+.map-progress > div > svg { color: #bb9c58; fill: #f5e4b7; }
+.map-progress > div > span { margin-left: auto; font-size: 9px; color: #9d8992; }
+.map-progress progress { display: block; width: 100%; height: 6px; border: 0; border-radius: 10px; overflow: hidden; margin-top: 12px; appearance: none; background: #ede1e6; accent-color: #b8839d; }
+.map-progress progress::-webkit-progress-bar { background: #ede1e6; border-radius: 10px; }
+.map-progress progress::-webkit-progress-value { background: #b8839d; border-radius: 10px; }
+.map-progress progress::-moz-progress-bar { background: #b8839d; border-radius: 10px; }
+.map-legend { display: flex; align-items: center; justify-content: center; gap: 22px; margin: -4px 0 25px; font-size: 9px; color: #9b8290; }
+.map-legend > span { display: flex; align-items: center; gap: 5px; }
+.interactive-map .map-guide-note { max-width: 650px; padding: 16px 26px; }
+.map-guide-note .map-next { min-height: 44px; padding: 10px 16px; margin-top: 14px; font-size: 11px; gap: 12px; }
+.map-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 25px; margin-top: 16px; }
+.map-actions .text-button { margin-left: 0; }
+.invitation-resume { margin: 12px 0 0; font-size: 11px; }
+.confirm-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 12px; margin-top: 25px; }
+.story-modal .confirm-actions .primary-button { width: auto; }
+.secondary-button { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 12px 18px; border: 1px solid #decbd5; border-radius: 12px; background: #fffaf7; color: #8c6579; font-size: 12px; font-weight: 800; }
+.secondary-button:hover { background: #f7eaf1; }
+.station-scene { padding: 46px 0 40px; text-align: center; }
+.station-scene h1 { font-size: clamp(32px, 4vw, 51px); margin: 18px 0 13px; }
+.station-intro { max-width: 450px; margin: auto; font-size: 13px; line-height: 1.8; color: #a08793; }
+.station-welcome-card { max-width: 620px; margin: 30px auto 0; padding: 30px; border: 1px solid #eddee5; border-radius: 25px; background: #fffaf6; box-shadow: 0 10px 30px #b78faa0b; }
+.station-entry-icon { display: grid; place-items: center; width: 98px; height: 98px; border: 6px solid #fff; border-radius: 30px; margin: auto; transform: rotate(-5deg); box-shadow: 0 5px 20px #b78faa18; }
+.station-entry-status { display: inline-flex; align-items: center; justify-content: center; gap: 6px; margin: 20px 0; color: #af8b55; font-size: 10px; font-weight: 800; }
+.station-entry-status.completed { color: #70937b; }
+.station-welcome-card h2 { font-family: var(--font-display); font-weight: 400; font-size: 25px; line-height: 1.35; max-width: 400px; margin: 0 auto 17px; }
+.station-welcome-card > p { max-width: 440px; margin: auto; font-size: 13px; line-height: 1.9; color: #9e8290; }
+.station-preparing { display: flex; align-items: center; gap: 8px; text-align: left; padding: 12px 18px; background: #f5edf4; border-radius: 14px; margin: 24px 0; }
+.station-mochi { width: 80px; flex-shrink: 0; }
+.station-preparing p { font-size: 11px; line-height: 1.8; color: #96738b; }
+.station-welcome-card > .primary-button { min-height: 46px; font-size: 12px; }
+.station-reread { margin: 12px auto 0; }
+.finale-mochi { width: 180px; display: block; margin: auto; }
+.finale-mochi ~ .primary-button { margin-top: 25px; }
+@media (max-width: 760px) {
+  .interactive-map .map-stations { min-height: auto; gap: 20px; }
+  .interactive-map .map-station { min-height: 0; padding: 0; }
+  .map-station-control { display: grid; grid-template-columns: 76px 1fr; grid-template-rows: auto auto auto; gap: 5px 17px; text-align: left; min-height: 90px; padding: 5px 0; }
+  .map-station-control .map-station-picture { grid-column: 1; grid-row: 1 / 4; }
+  .map-station-title { font-size: 16px; align-self: end; grid-column: 2; }
+  .map-station-status { justify-self: start; align-self: start; grid-column: 2; }
+  .station-lock-reason { max-width: none; grid-column: 2; font-size: 9px; }
+  .map-progress { padding: 13px 15px; }
+  .map-progress > div { flex-wrap: wrap; }
+  .map-progress > div > span { width: 100%; margin-left: 24px; line-height: 1.6; }
+  .interactive-map .map-guide-note { padding: 15px 12px; align-items: flex-start; }
+  .map-actions { gap: 0 16px; }
+  .map-actions .text-button { font-size: 9px; }
+  .map-legend { gap: 13px; font-size: 8px; }
+  .invitation-resume { margin: 12px auto 0; }
+  .station-welcome-card { padding: 25px 18px; }
+  .station-welcome-card h2 { font-size: 22px; }
+  .station-preparing { padding: 12px 10px; gap: 0; }
+  .station-mochi { width: 64px; }
+  .confirm-actions { flex-direction: column-reverse; }
+  .confirm-actions button { width: 100% !important; }
+}

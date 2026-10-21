@@ -1,0 +1,79 @@
+/* Apertura del sobre y aparición de Mochi: secuencia de la fase 3. */
+.invitation-storybook { perspective: 900px; }
+.invitation-storybook .envelope-flap { transition: none; }
+.invitation-storybook .is-open .envelope-flap { transform: rotateX(180deg); }
+.invitation-storybook .envelope { overflow: visible; }
+.invitation-storybook .envelope-letter { font-size: 14px; }
+.envelope-addressee { position: absolute; bottom: 10px; left: 0; right: 0; z-index: 2; text-align: center; font-family: var(--font-display); font-size: 13px; color: #986b7e; transition: opacity .2s; }
+.is-open .envelope-addressee { opacity: 0; }
+.invitation-storybook .envelope:disabled { cursor: wait; }
+.invitation-copy .primary-button:disabled { opacity: .75; transform: none; }
+.hero-mochi-reveal { position: absolute; width: 248px; bottom: 68px; left: 2%; z-index: 2; }
+.hero-mochi-reveal .hero-mochi { position: static; display: block; width: 100%; }
+.hero-mochi-reveal .mochi-speech { top: -22px; left: 54%; white-space: nowrap; }
+.invitation-storybook .cloud-one { animation: cloud-drift 8s ease-in-out infinite; }
+.invitation-storybook .cloud-two { animation: cloud-drift 10s ease-in-out infinite reverse; }
+.invitation-storybook .sky-star { animation: star-glimmer 4s ease-in-out infinite; }
+.invitation-storybook .star-two { animation-delay: 1.5s; }
+.invitation-storybook .floating-heart { animation: heart-drift 5s ease-in-out infinite; }
+@keyframes cloud-drift { 0%, 100% { translate: 0; } 50% { translate: 9px; } }
+@keyframes star-glimmer { 0%, 100% { opacity: .6; } 50% { opacity: 1; } }
+@keyframes heart-drift { 0%, 100% { translate: 0; } 50% { translate: 0 -6px; } }
+
+/* Vista de llegada al jardín; la interacción con estaciones llega en fase 4. */
+.map-intro { padding: 43px 0 36px; }
+.map-welcome { text-align: center; }
+.map-welcome h1 { font-size: clamp(35px, 4vw, 53px); margin: 17px 0 13px; }
+.map-welcome > p { font-size: 13px; line-height: 1.8; color: #9b858c; max-width: 400px; margin: auto; }
+.garden-map-preview { position: relative; isolation: isolate; margin: 32px 0 22px; min-height: 350px; border: 6px solid #fffdf9; border-radius: 28px; background: linear-gradient(#f2edf2 0%, #f6f1ec 46%, #e4ebd8 47%, #d6e3c9 100%); box-shadow: 0 0 0 1px #e9e0d5, 0 9px 25px #8d77610a; overflow: hidden; }
+.map-route { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -1; }
+.map-route path { fill: none; stroke: #fffaf0; stroke-width: 23px; stroke-linecap: round; stroke-dasharray: 2 20; }
+.map-stations { padding: 0; margin: 0; list-style: none; position: relative; min-height: 330px; display: grid; grid-template-columns: repeat(5, 1fr); }
+.map-station { display: flex; flex-direction: column; align-items: center; text-align: center; position: relative; gap: 8px; padding: 0 6px; align-self: start; margin-top: 122px; }
+.map-station-2, .map-station-4 { margin-top: 37px; }
+.map-station-3 { margin-top: 176px; }
+.map-station-picture { display: grid; place-items: center; width: 74px; height: 74px; border-radius: 25px; border: 5px solid #fffdf6; box-shadow: 0 6px 0 #b6a3a512; position: relative; }
+.map-station-count { position: absolute; right: -8px; bottom: -5px; width: 23px; height: 23px; display: grid; place-items: center; border-radius: 50%; border: 2px solid #fffdf6; background: #b38ca2; color: #fff; font-size: 9px; font-weight: 800; }
+.map-station h2 { font-family: var(--font-display); font-weight: 400; font-size: 15px; color: #7a626c; }
+.map-station-soon { font-size: 8px; letter-spacing: .7px; color: #877a76; background: #fffdf4a1; padding: 4px 9px; border-radius: 20px; }
+.map-cloud { position: absolute; width: 80px; height: 20px; border-radius: 40px; background: #fffaf7; opacity: .8; z-index: -1; }
+.map-cloud::before { content: ''; position: absolute; width: 32px; height: 33px; background: inherit; bottom: 2px; left: 20px; border-radius: 50%; }
+.map-cloud-left { top: 45px; left: 6%; }
+.map-cloud-right { top: 65px; right: 3%; scale: .75; }
+.map-blossom { position: absolute; color: #c994ab; font-size: 36px; z-index: -1; }
+.blossom-one { bottom: 32px; left: 19%; transform: rotate(-15deg); }
+.blossom-two { bottom: 37px; right: 17%; color: #ae9dc4; }
+.map-decoration-star { position: absolute; color: #d1b871; fill: #f4dea5; top: 29px; left: 49%; }
+.map-garden-label { position: absolute; bottom: 17px; left: 0; right: 0; display: flex; align-items: center; justify-content: center; gap: 6px; color: #7f9276; font-size: 8px; font-weight: 800; letter-spacing: 1.5px; }
+.map-guide-note { display: flex; align-items: center; gap: 20px; background: #fbf3ee; border: 1px solid #eee0e2; border-radius: 18px; padding: 12px 26px; max-width: 630px; margin: auto; }
+.map-guide-mochi { width: 88px; flex-shrink: 0; }
+.map-guide-note h2 { font-family: var(--font-display); font-weight: 400; font-size: 20px; }
+.map-guide-note p { font-size: 12px; line-height: 1.8; margin-top: 7px; color: #a08690; }
+.map-return { margin: 15px auto 0; }
+@media (min-width: 1400px) { .hero-mochi-reveal { width: 280px; } }
+@media (max-width: 1100px) { .hero-mochi-reveal { width: 215px; left: 0; } }
+@media (max-width: 760px) {
+  .hero-mochi-reveal { width: 230px; left: 1%; bottom: 63px; }
+  .hero-mochi-reveal .mochi-speech { top: -20px; left: 50%; }
+  .map-intro { padding-top: 30px; }
+  .garden-map-preview { margin-top: 26px; }
+  .map-stations { display: flex; flex-direction: column; gap: 22px; min-height: auto; padding: 30px 26px 65px; }
+  .map-station { flex-direction: row; flex-wrap: wrap; margin: 0; min-height: 80px; gap: 8px 17px; align-self: stretch; padding: 0; text-align: left; }
+  .map-station-picture { grid-row: span 2; flex-shrink: 0; }
+  .map-station h2 { font-size: 16px; }
+  .map-station { display: grid; grid-template-columns: 76px 1fr; grid-template-rows: 1fr 1fr; }
+  .map-station h2 { align-self: end; }
+  .map-station-soon { align-self: start; justify-self: start; }
+  .map-route { left: 49px; top: 63px; height: calc(100% - 143px); width: 0; border-left: 9px dotted #fffaf0; }
+  .map-cloud-left { left: auto; right: 20px; top: 45px; }
+  .map-cloud-right { right: -10px; top: 275px; }
+  .map-decoration-star { left: auto; right: 25px; top: 190px; }
+  .blossom-one { left: auto; right: 20px; bottom: 150px; }
+  .blossom-two { right: 12px; bottom: 350px; }
+  .map-guide-note { gap: 8px; padding: 14px; }
+  .map-guide-mochi { width: 64px; }
+  .map-guide-note h2 { font-size: 17px; }
+  .map-guide-note p { font-size: 11px; }
+}
+@media (max-width: 370px) { .hero-mochi-reveal { width: 205px; left: -8px; } .hero-mochi-reveal .mochi-speech { font-size: 9px; left: 40%; } }
+@media (prefers-reduced-motion: reduce) { .invitation-storybook .cloud, .invitation-storybook .sky-star, .invitation-storybook .floating-heart { animation: none; } }

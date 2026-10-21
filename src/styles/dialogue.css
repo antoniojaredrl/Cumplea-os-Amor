@@ -1,0 +1,53 @@
+/* El bocadillo conserva la altura del texto completo mientras Mochi escribe. */
+.dialogue-portrait {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  padding-top: 4px;
+  background: radial-gradient(ellipse, #f4e7ee 0%, #f4e7ee00 69%);
+}
+.dialogue-mochi { display: block; width: min(210px, 60%); }
+.dialogue-petals { color: #c6a3b5; letter-spacing: 9px; font-size: 17px; margin-top: -18px; }
+.dialogue-bubble {
+  position: relative;
+  border: 1px solid #ead7e0;
+  border-radius: 20px;
+  background: #fffafc;
+  padding: 19px 21px;
+  margin-top: 20px;
+  box-shadow: 0 5px 16px #b78faa0b;
+}
+.dialogue-bubble::before {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: #fffafc;
+  border-left: 1px solid #ead7e0;
+  border-top: 1px solid #ead7e0;
+  top: -9px;
+  left: calc(50% - 8px);
+  transform: rotate(45deg);
+}
+.dialogue-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.dialogue-heading h3 { display: flex; align-items: center; gap: 7px; color: #aa748d; font-family: var(--font-display); font-size: 17px; font-weight: 400; }
+.dialogue-heading > span { color: #b79ca9; font-size: 10px; font-weight: 700; }
+.dialogue-message { display: grid; margin: 15px 0 19px; min-height: 110px; }
+.story-modal .dialogue-message p { grid-area: 1 / 1; margin: 0; font-size: 15px; line-height: 1.85; color: #806470; overflow-wrap: anywhere; white-space: pre-wrap; }
+.dialogue-size-reference { visibility: hidden; pointer-events: none; }
+.typing-cursor { color: #bc8ba3; animation: cursor-pulse .8s ease-in-out infinite; }
+.typing-cursor.is-hidden { visibility: hidden; }
+.dialogue-controls { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.dialogue-back { min-height: 44px; display: inline-flex; align-items: center; gap: 5px; color: #a27b8c; background: transparent; padding: 7px 0; font-size: 11px; border-radius: 6px; }
+.dialogue-back:hover:not(:disabled) { color: #775464; }
+.dialogue-back:disabled { opacity: .4; }
+.story-modal .dialogue-next { width: auto; min-height: 44px; font-size: 11px; padding: 10px 15px; gap: 12px; }
+.story-modal .dialogue-hint { font-size: 10px; text-align: center; color: #af95a1; margin: 16px 0 0; }
+@keyframes cursor-pulse { 0%, 100% { opacity: 1; } 50% { opacity: .25; } }
+@media (max-width: 400px) {
+  .dialogue-bubble { padding: 17px 14px; }
+  .story-modal .dialogue-message p { font-size: 14px; }
+  .story-modal .dialogue-next { padding: 10px; gap: 6px; font-size: 10px; }
+  .dialogue-back { font-size: 10px; }
+}
+@media (prefers-reduced-motion: reduce) { .typing-cursor { animation: none; } }

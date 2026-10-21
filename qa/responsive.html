@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="es"><meta charset="utf-8"><title>Revisión responsive · Michiaventura</title>
+<style>body{font:16px system-ui;background:#e7e1e5;margin:24px;color:#493a43}section{display:flex;gap:24px;align-items:flex-start;width:max-content}h1{font-size:23px}h2{font-size:16px}iframe{display:block;height:850px;border:1px solid #ad95a3;border-radius:12px;background:#fffcf6}p{max-width:900px;line-height:1.6}</style>
+<h1>Revisión de ventanas estrechas</h1><p>Herramienta local de revisión. Cada marco tiene un viewport real de CSS; comparten el progreso de este origen. No forma parte de la distribución de producción.</p>
+<section><div><h2>320 px</h2><iframe title="Michiaventura 320 px" width="320" src="/"></iframe></div><div><h2>375 px</h2><iframe title="Michiaventura 375 px" width="375" src="/"></iframe></div><div><h2>768 px</h2><iframe title="Michiaventura 768 px" width="768" src="/"></iframe></div></section>
+<script>
+for (const frame of document.querySelectorAll('iframe')) {
+  const report = document.createElement('p'); frame.before(report);
+  setInterval(() => {
+    const doc = frame.contentDocument;
+    if (!doc?.getElementById('main')) return;
+    const root = doc.documentElement;
+    report.textContent = `${root.clientWidth} px útiles · ${root.scrollWidth > root.clientWidth ? 'DESBORDAMIENTO' : 'sin desbordamiento horizontal'} · ${doc.querySelector('h1')?.textContent}`;
+    report.style.maxWidth = frame.width + 'px';
+  }, 1000);
+}
+</script>
+</html>

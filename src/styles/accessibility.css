@@ -1,0 +1,11 @@
+/* Conserva los fondos pastel y da más contraste a controles y texto de lectura. */
+.primary-button{background:#956077;border-color:#956077;color:#fffafc}
+.primary-button:hover{background:#805166}
+.intro,.private-note,.chapter-note,.chapter-note strong,.preview-heading p,
+.preview-items>span,.mochi-footnote,footer,.story-modal p,.eyebrow,
+.occasion-pill,.text-button,.progress-total,.letter-recipient,.letter-eyebrow,
+.letter-paragraphs p,.surprise-content>p,.activity-heading>p,.activity-guide p{color:#795e6b}
+.text-button:hover{color:#654452}
+/* El enlace del resumen también necesita un blanco táctil cómodo. */
+.text-button{min-height:44px}
+@media(max-width:370px){.site-header .brand{font-size:18px}.site-header nav{gap:5px}.brand{gap:7px}}
